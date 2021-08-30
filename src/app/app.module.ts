@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { VezbaComponent } from './vezba/vezba.component';
 import { DetaljiStudentComponent } from './detalji-student/detalji-student.component';
 import { UsersComponent } from './users/users.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatListModule } from '@angular/material/list';
@@ -28,6 +28,7 @@ import { DialogFormComponent } from './dialog-form/dialog-form.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { TokenInterceptor } from './auth/token.interceptor';
 
 
 @NgModule({
@@ -64,7 +65,13 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

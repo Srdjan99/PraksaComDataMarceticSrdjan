@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { User } from '../models/student.model';
+import { UserListService } from '../users/services/user-list.service';
 
 
 @Component({
@@ -10,10 +11,10 @@ import { User } from '../models/student.model';
 })
 export class DialogFormComponent implements OnInit {
   user= new User();
-  constructor() { }
+  constructor(public service:UserListService) { }
 
   onSubmitTemplateBased() {
-    console.log(this.user);
+    this.createUser();
 }
 
   ngOnInit(): void {
@@ -28,6 +29,12 @@ export class DialogFormComponent implements OnInit {
     }
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+
+  createUser():void{
+    this.service.addUsers(this.user).subscribe((data:any)=>{
+
+    })
   }
 
 }
