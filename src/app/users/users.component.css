@@ -1,0 +1,129 @@
+.mat-list-base .mat-list-item {
+    color: black;
+}
+
+#Omotac {
+    display: flex;
+    flex-direction: row;
+    width: max;
+    justify-content: space-between;
+}
+
+#Strana {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    align-items: center;
+    margin: 10px;
+}
+
+#Korisnic {
+    display: flex;
+    flex-direction: row;
+    border: gray 1px solid;
+    background-color: honeydew;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#DesnaStrana {
+    margin-left: 5px;
+    width: 400px;
+}
+
+#DesnoDole {
+    display: flex;
+    flex-direction: column;
+}
+
+#DesnoGore p, #DesnoDole>div {
+    color: gray;
+    display: flex;
+    flex-direction: row;
+}
+
+#DesnoGore div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#DesnoDole>div>div {
+    color: black;
+}
+
+button {
+    /*margin-right: 5px;
+    background-color: blue;
+    height: max-content;*/
+    width: 100px !important;
+    background-color: blue;
+    right: 2px;
+}
+
+img {
+    height: 50px;
+    width: 60px;
+}
+
+#LevaStrana {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    justify-content: center;
+    height: max-content;
+}
+
+#LevaStrana img {
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 360px;
+}
+
+/*KORISCENJE MAT CARD IZ ANGULAR MATERIAL*/
+
+
+#SadrzajKartice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#SadrzajKartice div {
+    margin-top: 3px;
+    align-items: baseline;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+}
+
+#SadrzajKartice div div {
+    color: black;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+#ProfilnaSlika img {
+    justify-content: space-around;
+}
+
+#DugmadKartice {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#Rezutati {
+    width: 100%;
+    justify-content: center;
+}
+
+
+
+/*ANGULAR MATERIAL TABS*/
+
+mat-tab-group {
+    background-color: gray;
+}

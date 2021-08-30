@@ -1,0 +1,44 @@
+#OmotacKartice {
+    display: flex;
+    flex-direction: column;
+    width: max;
+    justify-content: space-between;
+}
+
+#Kartice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    min-width: 400px;
+    background-color: silver;
+    flex: 1;
+}
+
+#KompKartice {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.female {
+    background-color: #c5462f !important;
+}
+
+.male {
+    background-color: #65b9b9 !important;
+}
+
+.active {
+    border: green 4px solid;
+}
+
+.inactive {
+    border: red 4px solid;
+}
+
+@media (max-width: 1260px) {
+    #Kartice {
+        flex: 1;
+    }
+}

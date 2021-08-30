@@ -1,0 +1,75 @@
+#Rezutati {
+    width: 100%;
+    justify-content: center;
+}
+
+.zenski {
+    background-color: tomato !important;
+}
+
+.muski {
+    background-color: cyan !important;
+}
+
+.aktiv {
+    border: green 2px solid;
+}
+
+.neaktiv {
+    border: red 2px solid;
+}
+
+/*ANGULAR MATERIAL TABS*/
+
+mat-tab-group {
+    background-color: gray;
+}
+
+#Header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ca8989;
+}
+
+button img {
+    margin: 10px!important;
+}
+
+#Header div {
+    margin: 5px;
+}
+
+@media (max-width: 1260px) {
+    #Header {
+        height: 100px;
+    }
+    #Header img {
+        height: 100px!important;
+    }
+    h2 {
+        margin-top: 25px;
+        font: 500 40px/32px Roboto!important;
+    }
+}
+
+@media(max-width:840px) {
+    #Header {
+        height: 500px;
+        flex-direction: column;
+        align-items: center;
+    }
+    #Header img {
+        height: 300px!important;
+        width: 100%;
+    }
+    h2 {
+        margin-top: 25px;
+        font: 500 40px/32px Roboto!important;
+    }
+    div#mat-tab-label-0-0 {
+        min-width: 350px!important;
+    }
+    div#mat-tab-label-0-1 {
+        min-width: 350px!important;
+    }
+}

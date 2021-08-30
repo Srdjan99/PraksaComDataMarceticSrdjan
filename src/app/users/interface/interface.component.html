@@ -1,0 +1,16 @@
+<div id="Header">
+    <img src='../../assets/images/ComDataLogo.jpg' style="height:50px;">
+    <h2>PRAKSA COMDATA</h2>    
+    <h2>Srdjan Marcetic</h2>
+</div>
+<mat-tab-group >
+    <mat-tab label="Cards" id="Tab" >
+        <button mat-button (click)="OnButtonClick()">
+            <img src='../../assets/images/048-add-file.svg' style="height:50px;">
+        </button>        
+        <app-list-users></app-list-users>
+    </mat-tab>
+    <mat-tab label="Table" >
+        <app-table></app-table>
+    </mat-tab>    
+</mat-tab-group>

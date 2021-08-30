@@ -1,0 +1,29 @@
+<section class="sample-app-content">
+    <h1>Forma za upis</h1>
+    <form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+        <mat-form-field>
+            <mat-label>Ime:</mat-label>
+            <input matInput type="text" [(ngModel)]="user.name" name="name" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email:</mat-label>
+            <input matInput type="text" [(ngModel)]="user.email" name="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Gender:</mat-label>
+            <mat-select [(ngModel)]="user.gender" name="gender" required>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Status:</mat-label>
+            <mat-select [(ngModel)]="user.status" name="status" required>
+                <mat-option value="active">Active</mat-option>
+                <mat-option value="inactive">Inactive</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button type="submit" [disabled]="!myForm.valid">Submit</button>
+    </form>
+</section>
