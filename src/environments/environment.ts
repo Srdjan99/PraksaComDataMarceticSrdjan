@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://gorest.co.in/public/v1/users",
+  apiUrl:"https://gorest.co.in/public/v1/users/",
   token:'1766d69184773df28aea482d3f5ff10c5c2a9361b2109c54dd921b79f55a6885'
 };
 

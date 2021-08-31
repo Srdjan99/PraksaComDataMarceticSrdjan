@@ -4,6 +4,8 @@ import { UserListService } from './services/user-list.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
+import { DialogFormComponent } from '../dialog-form/dialog-form.component';
 
 
 @Component({
@@ -12,8 +14,8 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  @Input() user?: User;
-
+  @Input() user: User;
+  
   selektovani?:User;
   public users:User[]=[];  
   constructor(private usersService:UserListService,
@@ -25,7 +27,7 @@ export class UsersComponent implements OnInit {
     this.usersService.getUsers().subscribe((data : any)=>
     {
       this.users=data.data;
-      console.log(data);
+     // console.log(data);
     },error=>{
       this.users=[];
       console.log(error);
@@ -34,28 +36,27 @@ export class UsersComponent implements OnInit {
     
   }
 
-  /*OnButtonClick(users:User){
-    this.selektovani=users;
-  }*/
-
-  /*OnButtonClick(user:User){
-    this.dialog.open(DialogComponent,{      
-      data:user
-    })
-  }*/
+  
 
   OnButtonClick(){
     this.dialog.open(DialogComponent,{      
       data:this.user
     })
   }
+  OnButtonDelete(): void{
+    console.log("Pokusava");
+    this.dialog.open(DialogDeleteComponent,{      
+      data:this.user
+    })
+   /* this.usersService.deleteUsers(this.user.id).subscribe((data:any)=>{
+      console.log("Brise");
+    })*/
+  }
 
-
- /* openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverview, {
-      data: this.users
-    });
-
-  }*/
-
+  OnButtonEdit():void{
+    this.dialog.open(DialogFormComponent,{      
+      data:this.user
+    })
+  }
+ 
 }

@@ -20,6 +20,11 @@ export class UserListService {
   }
 
   addUsers(user:User):Observable<UsersDataResponse>{
-    return this.http.post<UsersDataResponse>(this._url,user)
+    return this.http.post<UsersDataResponse>(this._url,user);
+  }
+
+  deleteUsers(id:Number){
+    console.log(id);
+    return this.http.delete(this._url + id);
   }
 }

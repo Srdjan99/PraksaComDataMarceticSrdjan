@@ -29,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { TokenInterceptor } from './auth/token.interceptor';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { TokenInterceptor } from './auth/token.interceptor';
     InterfaceComponent,
     DialogComponent,
     ListUsersComponent,
-    DialogFormComponent
+    DialogFormComponent,
+    DialogDeleteComponent
   ],
   imports: [
     BrowserModule,
