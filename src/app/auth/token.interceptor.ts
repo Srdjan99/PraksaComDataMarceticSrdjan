@@ -7,7 +7,6 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { UserListService } from '../users/services/user-list.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {

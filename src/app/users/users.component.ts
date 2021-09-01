@@ -6,7 +6,6 @@ import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component'
 import { DialogFormComponent } from '../dialog-form/dialog-form.component';
 import { EventEmitter } from '@angular/core';
 
-
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -21,7 +20,6 @@ export class UsersComponent {
   constructor(
     public dialog: MatDialog) { }
 
-
   OnButtonClick() {
     this.dialog.open(DialogComponent, {
       data: this.user
@@ -29,25 +27,20 @@ export class UsersComponent {
   }
 
   OnButtonDelete(): void {
-    console.log("Pokusava");
     this.dialog.open(DialogDeleteComponent, {
       data: this.user
     }).afterClosed().subscribe((user: User) => {
       if (user) {
-        console.log("Emituje");
         this.changeUser.emit();
       }
-    })
-
+    });
   }
 
   OnButtonEdit(): void {
-    console.log("krece");
     this.dialog.open(DialogFormComponent, {
       data: this.user
     }).afterClosed().subscribe((user: User) => {
       if (user) {
-        console.log("Emituje");
         this.changeUser.emit();
       }
     })

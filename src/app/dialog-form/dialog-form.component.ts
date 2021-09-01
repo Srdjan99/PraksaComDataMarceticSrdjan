@@ -1,8 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { User } from '../models/student.model';
 import { UserListService } from '../users/services/user-list.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UsersDataResponse } from '../models/user-data-response.model';
 
 @Component({
@@ -10,7 +10,7 @@ import { UsersDataResponse } from '../models/user-data-response.model';
   templateUrl: './dialog-form.component.html',
   styleUrls: ['./dialog-form.component.css']
 })
-export class DialogFormComponent implements OnInit {
+export class DialogFormComponent {
   user: User;
   isUser: boolean;
   constructor(public service: UserListService,
@@ -26,10 +26,6 @@ export class DialogFormComponent implements OnInit {
     this.isUser ? this.editUser() : this.createUser();
   }
 
-  ngOnInit(): void {
-  }
-
-
   email = new FormControl('', [Validators.required, Validators.email]);
 
   getErrorMessageEmail() {
@@ -42,15 +38,13 @@ export class DialogFormComponent implements OnInit {
 
   createUser() {
     this.service.addUsers(this.user).subscribe((data: UsersDataResponse) => {
-      console.log("kreiran korisnik");
+      this.dialogRef.close(this.user);
     })
   }
 
   editUser() {
-    console.log("nastavlja");
     this.service.editUsers(this.user).subscribe((data: UsersDataResponse) => {
       this.dialogRef.close(this.user);
-      console.log("Edituje");
     })
   }
 

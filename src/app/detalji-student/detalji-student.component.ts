@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Student } from '../models/student.model';
 import { User } from '../models/student.model';
-
 
 @Component({
   selector: 'app-detalji-student',
@@ -14,10 +13,6 @@ export class DetaljiStudentComponent {
   @Input() userDet?: User;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 
 }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../models/student.model';
-import{HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { UsersDataResponse } from 'src/app/models/user-data-response.model';
@@ -9,26 +9,26 @@ import { UsersDataResponse } from 'src/app/models/user-data-response.model';
 })
 export class UserListService {
 
-  private _url:string;
+  private _url: string;
 
-  constructor(private http:HttpClient) {
-    this._url=environment.apiUrl;
+  constructor(private http: HttpClient) {
+    this._url = environment.apiUrl;
   }
 
-  getUsers():Observable<UsersDataResponse>{
+  getUsers(): Observable<UsersDataResponse> {
     return this.http.get<UsersDataResponse>(this._url);
   }
 
-  addUsers(user:User):Observable<UsersDataResponse>{
-    return this.http.post<UsersDataResponse>(this._url,user);
+  addUsers(user: User): Observable<UsersDataResponse> {
+    return this.http.post<UsersDataResponse>(this._url, user);
   }
 
-  deleteUsers(id:Number){
-    console.log(id);
+  editUsers(user: User): Observable<UsersDataResponse> {
+    return this.http.put<UsersDataResponse>(this._url + user.id, user);
+  }
+
+  deleteUsers(id: Number) {
     return this.http.delete(this._url + id);
   }
 
-  editUsers(user:User):Observable<UsersDataResponse>{
-    return this.http.put<UsersDataResponse>(this._url+user.id,user);
-  }
 }

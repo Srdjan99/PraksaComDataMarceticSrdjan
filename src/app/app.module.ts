@@ -14,7 +14,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { TableComponent } from './users/table/table.component';
 import { MatTableModule } from '@angular/material/table';
-import { MatTableDataSource } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -30,7 +29,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
-
 
 @NgModule({
   declarations: [
