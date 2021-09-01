@@ -15,8 +15,8 @@ export class UserListService {
     this._url = environment.apiUrl;
   }
 
-  getUsers(): Observable<UsersDataResponse> {
-    return this.http.get<UsersDataResponse>(this._url);
+  getUsers(name:String): Observable<UsersDataResponse> {
+    return this.http.get<UsersDataResponse>(this._url+"?name="+name);
   }
 
   addUsers(user: User): Observable<UsersDataResponse> {

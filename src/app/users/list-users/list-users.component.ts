@@ -21,7 +21,7 @@ export class ListUsersComponent implements OnInit {
   }
 
   callUsers() {
-    this.usersService.getUsers().subscribe((data: any) => {
+    this.usersService.getUsers("").subscribe((data: any) => {
       this.users = data.data;
     }, error => {
       this.users = [];
