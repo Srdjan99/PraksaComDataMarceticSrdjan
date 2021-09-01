@@ -1,8 +1,7 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, Inject } from '@angular/core';
 import { User } from '../models/student.model';
 import { UserListService } from '../users/services/user-list.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-delete',
@@ -11,7 +10,8 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class DialogDeleteComponent implements OnInit {
   constructor(private usersService: UserListService,
-             @Inject (MAT_DIALOG_DATA) public user:User) { }
+             @Inject (MAT_DIALOG_DATA) public user:User,
+             private dialogRef: MatDialogRef<DialogDeleteComponent>) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +20,7 @@ export class DialogDeleteComponent implements OnInit {
   delete(): void {
     console.log("Valjda");
     this.usersService.deleteUsers(this.user.id).subscribe((data: any) => {
+      this.dialogRef.close(this.user);
       console.log("Brise");
     })
   }

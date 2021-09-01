@@ -18,6 +18,10 @@ export class ListUsersComponent implements OnInit {
               public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.callUsers();
+  }
+
+  callUsers(){
     this.usersService.getUsers().subscribe((data : any)=>
     {
       this.users=data.data;
@@ -28,7 +32,5 @@ export class ListUsersComponent implements OnInit {
       this.snackBar.open('Greska', 'OK');
     })
   }
-
-  
 
 }

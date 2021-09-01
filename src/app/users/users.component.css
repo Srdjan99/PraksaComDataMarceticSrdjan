@@ -65,6 +65,7 @@ button {
 img {
     height: 50px;
     width: 60px;
+    
 }
 
 #LevaStrana {
@@ -82,6 +83,18 @@ img {
     border-radius: 360px;
 }
 
+.male{
+    background-color: blueviolet;
+}
+.female{
+    background-color: coral;
+}
+.active{
+    border: darkgreen solid 2px;
+}
+.inactive{
+    border: darkred solid 2px;
+}
 /*KORISCENJE MAT CARD IZ ANGULAR MATERIAL*/
 
 
@@ -106,8 +119,11 @@ img {
     flex-direction: row;
 }
 
-#ProfilnaSlika img {
+#ProfilnaSlika div img {
     justify-content: space-around;
+    height: 50px!important;
+    width: 60px!important;
+    
 }
 
 #DugmadKartice {

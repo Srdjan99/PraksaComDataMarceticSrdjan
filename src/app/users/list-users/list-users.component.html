@@ -1,8 +1,7 @@
 <div id="OmotacKartice">
     <div id="KompKartice">
-    <mat-card id="Kartice" *ngFor='let user of users' [ngClass]="{'female': user.gender === 'female', 'male' : user.gender === 'male', 
-    'active': user.status === 'active', 'inactive' : user.status === 'inactive' }">
-        <app-users [user]="user"></app-users>
+    <mat-card id="Kartice" *ngFor='let user of users' >
+        <app-users [user]="user" (changeUser)="callUsers()"></app-users>
     </mat-card>
     </div>
 </div>

@@ -27,4 +27,8 @@ export class UserListService {
     console.log(id);
     return this.http.delete(this._url + id);
   }
+
+  editUsers(user:User):Observable<UsersDataResponse>{
+    return this.http.put<UsersDataResponse>(this._url+user.id,user);
+  }
 }
