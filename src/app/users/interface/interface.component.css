@@ -3,21 +3,6 @@
     justify-content: center;
 }
 
-.zenski {
-    background-color: tomato !important;
-}
-
-.muski {
-    background-color: cyan !important;
-}
-
-.aktiv {
-    border: green 2px solid;
-}
-
-.neaktiv {
-    border: red 2px solid;
-}
 
 /*ANGULAR MATERIAL TABS*/
 
@@ -28,7 +13,7 @@ mat-tab-group {
 #Header {
     display: flex;
     justify-content: space-between;
-    background-color: #ca8989;
+    background-color: #E4E4EA;
 }
 
 button img {

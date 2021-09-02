@@ -13,7 +13,7 @@ export class DialogComponent  {
 
   constructor(@Inject (MAT_DIALOG_DATA) public data:User) { }
 }
-//proveriti sta je koja klasa i da l se koriste obe
+
 
 export class DialogOverview {
 
